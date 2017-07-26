@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js" 
+    "start": "./node_modules/.bin/http-server",
+    "prestart": "npm install",
+    "postinstall": "bower install" 
   },
   "author": "Caitlyn Tetmeyer",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "bower": "^1.8.0",
     "http-server": "^0.10.0"
   }
 }

@@ -1,9 +1,8 @@
 $(function() {
 
 	var WorkoutLog = (function($, undefined) {
-		var API_BASE = "http://localhost:3000/api/";
-		/* When a user enters data into a form, the data's appended to
-		an empty array. */
+		var API_BASE = location.hostname === "localhost" ? "//localhost:3000/api/" : "//cct-workoutlog-server.herokuapp.com/api/";
+		app.constant('API_BASE', API_BASE);
 		var userDefinitions = [];
 
 		var setAuthHeader = function(sessionToken) {
@@ -90,8 +89,6 @@ $(function() {
 			}
 		}
 	})
-
-
 	
 	var token = window.localStorage.getItem("sessionToken");
 	if (token) {
@@ -101,18 +98,3 @@ $(function() {
 	// expose this to the other workoutlog modules
 	window.WorkoutLog = WorkoutLog;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
