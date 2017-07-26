@@ -2,7 +2,7 @@ $(function() {
 
 	var WorkoutLog = (function($, undefined) {
 		var API_BASE = location.hostname === "localhost" ? "//localhost:3000/api/" : "//cct-workoutlog-server.herokuapp.com/api/";
-		// app.constant('API_BASE', API_BASE);
+		WorkoutLog.constant('API_BASE', API_BASE);
 		var userDefinitions = [];
 
 		var setAuthHeader = function(sessionToken) {
